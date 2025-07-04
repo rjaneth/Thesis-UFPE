@@ -1,0 +1,79 @@
+project:
+  type: book
+  output-dir: .
+
+book:
+  title:  Thesis-Janeth 
+  date: July, 2025
+  author:
+    name: Janeth Alpala
+    url: 
+  downloads: [pdf]
+  chapters:
+    - index.qmd
+   #- Chapters/Chapter1.qmd # Do not activate this chapter because it is included in index.qmd
+    - Chapters/Chapter2.qmd
+    - Chapters/Chapter3.qmd
+    - Chapters/Chapter4.qmd
+    - Chapters/Chapter5.qmd
+    - references.qmd
+  appendices:
+   - Appendices/AppendixA.qmd
+
+  site-url: https://nmfs-opensci.github.io/quarto-thesis/
+  repo-url: https://github.com/nmfs-opensci/quarto-thesis
+  repo-actions: [edit, source, issue]
+  search: true
+  
+  
+#the cover is edited in \_extensions\quarto-thesis\partials\before-body.tex
+thesis:
+  #declaration: "Frontmatter/declaration.tex"
+  #dedication: "Frontmatter/dedication.tex"
+  #acknowledgements: "Frontmatter/acknowledgements.tex"
+  abstract: "Frontmatter/abstract.tex"
+  resumo: "Frontmatter/resumo.tex"
+  abbreviations: "Frontmatter/abbreviations.tex"
+  symbols: "Frontmatter/symbols.tex"
+  logo: images/ufpe-logo.png
+  logo-height: "3.5cm"
+  
+  
+
+
+
+bibliography: references.bib
+#csl: "universidade-federal-de-pernambuco-abnt"
+csl: "abnt" 
+link-citations: true
+#appendix: true
+#execute:
+  #echo: false
+  #code-overflow: wrap
+execute:
+  cache: true
+  #freeze: auto
+  eval: true
+  echo: false
+  warning: false
+  message: false
+  #pre-render: setup.R  
+
+# urlcolor changes the url color in the body of the PDF
+# linkcolor changes color of internal links (like to figures)
+# toclinkcolor changes color of toc, lof and lot links
+
+format:
+  quarto-thesis-pdf: 
+    pdf-engine:  pdflatex # xelatex
+    keep-tex: true 
+    urlcolor: black
+    linkcolor: blue
+    toclinkcolor: black
+    toc-depth: 3
+    fig-cap-location: top
+
+language:
+  crossref-apx-prefix: Attachment
+  section-title-appendices: APPENDICES
+  
